@@ -31,7 +31,7 @@
             this.tbDepartment = new System.Windows.Forms.ComboBox();
             this.btnNew = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
             this.tbPlace = new System.Windows.Forms.TextBox();
             this.tbGender = new System.Windows.Forms.CheckBox();
             this.tbDate = new System.Windows.Forms.DateTimePicker();
@@ -69,6 +69,7 @@
             this.btnNew.TabIndex = 33;
             this.btnNew.Text = "Thêm";
             this.btnNew.UseVisualStyleBackColor = true;
+            this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
             // 
             // btnEdit
             // 
@@ -78,15 +79,17 @@
             this.btnEdit.TabIndex = 32;
             this.btnEdit.Text = "Sửa";
             this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
-            // button2
+            // btnDelete
             // 
-            this.button2.Location = new System.Drawing.Point(682, 484);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(115, 32);
-            this.button2.TabIndex = 31;
-            this.button2.Text = "Xoá";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnDelete.Location = new System.Drawing.Point(682, 484);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(115, 32);
+            this.btnDelete.TabIndex = 31;
+            this.btnDelete.Text = "Xoá";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // tbPlace
             // 
@@ -171,6 +174,7 @@
             this.btnExit.TabIndex = 20;
             this.btnExit.Text = "Thoát";
             this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // Column6
             // 
@@ -239,16 +243,17 @@
             this.dgvEmployee.RowTemplate.Height = 24;
             this.dgvEmployee.Size = new System.Drawing.Size(1022, 304);
             this.dgvEmployee.TabIndex = 19;
+            this.dgvEmployee.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmployee_RowEnter);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1104, 559);
+            this.ClientSize = new System.Drawing.Size(1077, 559);
             this.Controls.Add(this.tbDepartment);
             this.Controls.Add(this.btnNew);
             this.Controls.Add(this.btnEdit);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.tbPlace);
             this.Controls.Add(this.tbGender);
             this.Controls.Add(this.tbDate);
@@ -263,6 +268,7 @@
             this.Controls.Add(this.dgvEmployee);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmployee)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -274,7 +280,7 @@
         private System.Windows.Forms.ComboBox tbDepartment;
         private System.Windows.Forms.Button btnNew;
         private System.Windows.Forms.Button btnEdit;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.TextBox tbPlace;
         private System.Windows.Forms.CheckBox tbGender;
         private System.Windows.Forms.DateTimePicker tbDate;

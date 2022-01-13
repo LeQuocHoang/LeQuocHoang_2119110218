@@ -46,6 +46,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BAL\Department_BAL.cs" />
+    <Compile Include="BAL\Employee_BAL.cs" />
+    <Compile Include="BEL\Department_BEL.cs" />
+    <Compile Include="BEL\Employee_BEL.cs" />
+    <Compile Include="DAL\DbConnection.cs" />
+    <Compile Include="DAL\Department_DAL.cs" />
+    <Compile Include="DAL\Employee_DAL.cs" />
     <Compile Include="GUI\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -79,10 +86,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="BAL\" />
-    <Folder Include="BEL\" />
-    <Folder Include="DAL\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
